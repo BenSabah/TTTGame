@@ -70,8 +70,7 @@ public class TTTGame {
 
 		// Check columns for a set |||.
 		for (int x = 0; x < 3; x++) {
-			if (gameTable[x][0] == gameTable[x][1]
-					&& gameTable[x][1] == gameTable[x][2]) {
+			if (gameTable[x][0] == gameTable[x][1] && gameTable[x][1] == gameTable[x][2]) {
 				if (gameTable[x][0] != Player.NONE) {
 					// System.out.println("colomn " + x + " won.");
 					markWinnerIndexes(x, 0, x, 1, x, 2);
@@ -84,8 +83,7 @@ public class TTTGame {
 
 		// Check rows for a set ---.
 		for (int y = 0; y < 3; y++) {
-			if (gameTable[0][y] == gameTable[1][y]
-					&& gameTable[1][y] == gameTable[2][y]) {
+			if (gameTable[0][y] == gameTable[1][y] && gameTable[1][y] == gameTable[2][y]) {
 				if (gameTable[0][y] != Player.NONE) {
 					// System.out.println("row " + y + " won.");
 					markWinnerIndexes(0, y, 1, y, 2, y);
@@ -97,8 +95,7 @@ public class TTTGame {
 		}
 
 		// Check diagonal \.
-		if (gameTable[0][0] == gameTable[1][1]
-				&& gameTable[1][1] == gameTable[2][2]) {
+		if (gameTable[0][0] == gameTable[1][1] && gameTable[1][1] == gameTable[2][2]) {
 			if (gameTable[0][0] != Player.NONE) {
 				// System.out.println("top-left to right-buttom diagnal won.");
 				markWinnerIndexes(0, 0, 1, 1, 2, 2);
@@ -108,8 +105,7 @@ public class TTTGame {
 			}
 		}
 		// Check diagonal /.
-		if (gameTable[0][2] == gameTable[1][1]
-				&& gameTable[1][1] == gameTable[2][0]) {
+		if (gameTable[0][2] == gameTable[1][1] && gameTable[1][1] == gameTable[2][0]) {
 			if (gameTable[0][2] != Player.NONE) {
 				// System.out.println("right-left to top-buttom diagnal won.");
 				markWinnerIndexes(0, 2, 1, 1, 2, 0);
@@ -257,8 +253,7 @@ public class TTTGame {
 	}
 
 	// Store the 3 cells of the win.
-	private void markWinnerIndexes(int x0, int y0, int x1, int y1, int x2,
-			int y2) {
+	private void markWinnerIndexes(int x0, int y0, int x1, int y1, int x2, int y2) {
 		winIndexes = new Point[3];
 		winIndexes[0] = new Point(x0, y0);
 		winIndexes[1] = new Point(x1, y1);

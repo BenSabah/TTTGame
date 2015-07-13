@@ -12,11 +12,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JToggleButton;
-import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")
 public class GuiTTTGame extends JFrame {
@@ -39,7 +37,6 @@ public class GuiTTTGame extends JFrame {
 		this.setSize(screenSize.x, screenSize.y);
 		this.setTitle("איקס עיגול");
 		setButtons();
-		amazingDanusha(mode);
 		this.add(panel);
 		this.setVisible(true);
 		this.setResizable(false);
@@ -137,16 +134,6 @@ public class GuiTTTGame extends JFrame {
 			for (int y = 0; y < 3; y++) {
 				buttons[x][y].setEnabled(state);
 			}
-		}
-	}
-
-	private void amazingDanusha(String mode) {
-		if (mode.equals("-danusha")) {
-			JLabel danusha = new JLabel("חולה עלייך דנושה!!! :-)", SwingConstants.CENTER);
-			danusha.setSize(this.getWidth(), 25);
-			danusha.setLocation(0, this.getHeight() - 33);
-			this.setSize(this.getWidth(), this.getHeight() + 25);
-			this.add(danusha);
 		}
 	}
 }

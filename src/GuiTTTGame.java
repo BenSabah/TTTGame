@@ -1,7 +1,8 @@
+
 /**
  * @author Ben Sabah.
  * 
- * AsciiTTTGame - this class make and handle a GUI tic-tac-toe game.
+ * GuiTTTGame - this class make and handle a GUI tic-tac-toe game.
  * 
  *         Happy cow says: "Muuuuuuu.."
  */

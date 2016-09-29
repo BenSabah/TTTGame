@@ -1,3 +1,4 @@
+
 /**
  * @author Ben Sabah.
  * 
@@ -104,6 +105,7 @@ public class TTTGame {
 				return true;
 			}
 		}
+
 		// Check diagonal /.
 		if (gameTable[0][2] == gameTable[1][1] && gameTable[1][1] == gameTable[2][0]) {
 			if (gameTable[0][2] != Player.NONE) {
@@ -136,13 +138,11 @@ public class TTTGame {
 
 	// Return the player's enum if asked.
 	public Player getWinner() {
-		Player tmp = winner;
-		return tmp;
+		return winner;
 	}
 
 	public Player getCurrentPlayer() {
-		Player tmp = currentPlayer;
-		return tmp;
+		return currentPlayer;
 	}
 
 	/**
@@ -166,21 +166,6 @@ public class TTTGame {
 	 */
 
 	public String getWinnerString() {
-		if (this.winner == Player.X) {
-			return "X is the winner.";
-		}
-		if (this.winner == Player.O) {
-			return "O is the winner.";
-		}
-
-		// if no winner check if game is over.
-		if (isGameFinished()) {
-			return "its a tie!";
-		}
-		return "No winner yet.";
-	}
-
-	public String getWinnerHebrewString() {
 		if (winner == Player.X || winner == Player.O) {
 			return "המשחק נגמר, ה-" + winner + " ניצח!";
 		}
@@ -207,7 +192,7 @@ public class TTTGame {
 	}
 
 	// Return a string that present the current game.
-	public String printTable() {
+	public String getCurrentTable() {
 		StringBuilder sb = new StringBuilder();
 		char tmp = '-';
 		for (int y = 0; y < 3; y++) {

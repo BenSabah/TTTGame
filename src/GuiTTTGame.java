@@ -33,14 +33,14 @@ public class GuiTTTGame extends JFrame {
 	}
 
 	public GuiTTTGame(String mode) {
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLocation(550, 250);
-		this.setSize(screenSize.x, screenSize.y);
-		this.setTitle("איקס עיגול");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocation(550, 250);
+		setSize(screenSize.x, screenSize.y);
+		setTitle("איקס עיגול");
 		setButtons();
-		this.add(panel);
-		this.setVisible(true);
-		this.setResizable(false);
+		add(panel);
+		setVisible(true);
+		setResizable(false);
 	}
 
 	private void setButtons() {
@@ -50,19 +50,20 @@ public class GuiTTTGame extends JFrame {
 				buttons[x][y].setSize(50, 50);
 				buttons[x][y].addActionListener(new ButtonMonitor());
 				buttons[x][y].setLocation(30 + x * 55, 10 + y * 55);
-				this.add(buttons[x][y]);
+				add(buttons[x][y]);
 			}
 		}
 
 		resetButton.setText("אפס משחק");
 		resetButton.setSize(200, 50);
 		resetButton.setLocation(10, 178);
-		resetButton.addActionListener(new ActionListener() {
+		resetButton.addActionListener(new ActionListener()
+		{
 			public void actionPerformed(ActionEvent event) {
 				resetGame();
 			}
 		});
-		this.add(resetButton);
+		add(resetButton);
 	}
 
 	private void resetGame() {
@@ -87,7 +88,6 @@ public class GuiTTTGame extends JFrame {
 			JToggleButton curButton = (JToggleButton) event.getSource();
 			boolean selected = curButton.getModel().isSelected();
 
-			// TODO add more buttons here.
 			if (selected) {
 				// If pressed, rename & deactivate the button.
 				curButton.setText(curGame.getCurrentPlayer() + "");
@@ -121,7 +121,7 @@ public class GuiTTTGame extends JFrame {
 			colorButton(buttons[winIdexes[2].x][winIdexes[2].y], Color.RED);
 		}
 		setAllGameButtonsTo(false);
-		resetButton.setText(curGame.getWinnerHebrewString());
+		resetButton.setText(curGame.getWinnerString());
 	}
 
 	private void colorButton(JToggleButton curButton, Color color) {

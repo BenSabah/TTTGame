@@ -1,3 +1,4 @@
+
 /**
  * @author Ben Sabah.
  * 
@@ -28,7 +29,7 @@ public class AsciiTTTGame {
 			}
 
 			// Print the current game table.
-			System.out.println(curGame.printTable());
+			System.out.println(curGame.getCurrentTable());
 		}
 
 		// Close the scanner.
